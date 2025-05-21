@@ -1,15 +1,12 @@
 {
   "version": 2,
-  "builds": [
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "routes": [
     {
-      "src": "package.json",
-      "use": "@vercel/node"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
-  ],
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
-  },
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  ]
 } 
